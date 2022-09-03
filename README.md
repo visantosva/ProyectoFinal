@@ -33,3 +33,18 @@ for i in range(len(ids_imgs)):
 	plt.title(y_train[ids_imgs[i]])
 plt.suptitle('16 imágenes del set MNIST')
 plt.show()
+
+# Pre-procesamiento: para introducirlas a la red neuronal debemos
+# "aplanar" cada una de las imágenes en un vector de 28x28 = 784 valores
+
+X_train = np.reshape( x_train, (x_train.shape[0],x_train.shape[1]*x_train.shape[2]) )
+X_test = np.reshape( x_test, (x_test.shape[0],x_test.shape[1]*x_test.shape[2]) )
+
+# Adicionalmente se normalizarán las intensidades al rango 0-1
+X_train = X_train/255.0
+X_test = X_test/255.0
+
+# Finalmente, convertimos y_train y y_test a representación "one-hot"
+nclasses = 10
+Y_train = np_utils.to_categorical(y_train,nclasses)
+Y_test = np_utils.to_categorical(y_test,nclasses)
