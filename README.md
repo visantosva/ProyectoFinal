@@ -116,4 +116,5 @@ for i in range(len(ids_imgs)):
 	plt.imshow(img, cmap='gray')
 	plt.axis('off')
 	plt.title('"{}" clasificado como "{}"'.format(cat_original,cat_prediccion))
+plt.suptitle('Ejemplos de clasificación en el set de validación')
 plt.show()
