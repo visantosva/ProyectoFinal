@@ -48,3 +48,32 @@ X_test = X_test/255.0
 nclasses = 10
 Y_train = np_utils.to_categorical(y_train,nclasses)
 Y_test = np_utils.to_categorical(y_test,nclasses)
+
+#
+# Creación del modelo:
+# - Capa de entrada: su dimensión será 784 (el tamaño de cada imagen aplanada)
+# - Capa oculta: 15 neuronas con activación ReLU
+# - Capa de salida: función de activación 'softmax' (clasificación multiclase) y un
+#     total de 10 categorías
+#
+
+np.random.seed(1)		# Para reproducibilidad del entrenamiento
+input_dim = X_train.shape[1]
+output_dim = Y_train.shape[1]
+
+modelo = Sequential()
+modelo.add( Dense(15, input_dim=input_dim, activation='relu'))
+modelo.add( Dense(output_dim, activation='softmax'))
+print(modelo.summary())
+
+#
+# Compilación y entrenamiento: gradiente descendente, learning rate = 0.05, función
+# de error: entropía cruzada, métrica de desempeño: precisión
+
+sgd = SGD(lr=0.2)
+modelo.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+
+# Para el entrenamiento se usarán 30 iteraciones y un batch_size de 1024
+num_epochs = 50
+batch_size = 1024
+historia = modelo.fit(X_train, Y_train, epochs=num_epochs, batch_size=batch_size, verbose=2)
