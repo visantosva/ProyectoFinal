@@ -98,7 +98,7 @@ plt.xlabel('Iteración')
 plt.show()
 
 # Calcular la precisión sobre el set de validación
-puntaje = modelo(X_test,Y_test,verbose=0)
+puntaje = modelo.evaluate(X_test,Y_test,verbose=0)
 print('Precisión en el set de validación: {:.1f}%'.format(100*puntaje[1]))
 
 # Realizar predicción sobre el set de validación y mostrar algunos ejemplos
