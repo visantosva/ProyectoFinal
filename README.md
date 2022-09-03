@@ -112,7 +112,7 @@ for i in range(len(ids_imgs)):
 	cat_original = np.argmax(Y_test[idx,:])
 	cat_prediccion = Y_pred[idx]
 
-	plt.subplot(3,3,i-1)
+	plt.subplot(3,3,i+1)
 	plt.imshow(img, cmap='gray')
 	plt.axis('off')
 	plt.title('"{}" clasificado como "{}"'.format(cat_original,cat_prediccion))
