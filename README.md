@@ -96,3 +96,24 @@ plt.ylabel('Precisión')
 plt.xlabel('Iteración')
 
 plt.show()
+
+# Calcular la precisión sobre el set de validación
+puntaje = modelo(X_test,Y_test,verbose=0)
+print('Precisión en el set de validación: {:.1f}%'.format(100*puntaje[1]))
+
+# Realizar predicción sobre el set de validación y mostrar algunos ejemplos
+# de la clasificación resultante
+Y_pred =modelo.predict(X_test)
+
+ids_imgs = np.random.randint(0,X_test.shape[0],9)
+for i in range(len(ids_imgs)):
+	idx = ids_imgs[i]
+	img = X_test[idx,:].reshape(28,28)
+	cat_original = np.argmax(Y_test[idx,:])
+	cat_prediccion = Y_pred[idx]
+
+	plt.subplot(3,3,i-1)
+	plt.imshow(img, cmap='gray')
+	plt.axis('off')
+	plt.title('"{}" clasificado como "{}"'.format(cat_original,cat_prediccion))
+plt.show()
