@@ -77,3 +77,22 @@ modelo.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accurac
 num_epochs = 50
 batch_size = 1024
 historia = modelo.fit(X_train, Y_train, epochs=num_epochs, batch_size=batch_size, verbose=2)
+
+#
+# Resultados
+#
+
+# Error y precisión vs iteraciones
+plt.subplot(1,2,1)
+plt.plot(historia.history['loss'])
+plt.title('Pérdida vs. iteraciones')
+plt.ylabel('Pérdida')
+plt.xlabel('Iteración')
+
+plt.subplot(1,2,2)
+plt.plot(historia.history['accuracy'])
+plt.title('Precisión vs. iteraciones')
+plt.ylabel('Precisión')
+plt.xlabel('Iteración')
+
+plt.show()
