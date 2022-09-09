@@ -51,7 +51,7 @@ la siguiente.
 ![Captura de pantalla 2022-09-08 201921ABCDFGHI](https://user-images.githubusercontent.com/111197367/189256416-ef0261ff-ff21-46fd-8ce7-a6b274fa5094.png)
 ![Captura de pantalla 2022-09-08 201921ABCDFGHIJ](https://user-images.githubusercontent.com/111197367/189256464-5dfea089-fa1a-4143-a551-ae9983447583.png)
 
-## Generación de reporte de la clasificación de los tipos de carnes según su categoría más la paleta de colores oara indice de referencia que se utilizó para conseguir los resultados de la clasificación.
+## Generación de reporte de la clasificación de los tipos de carnes según su categoría más la paleta de colores para indice de referencia que se utilizó para conseguir los resultados de la clasificación.
 ![Captura de pantalla 2022-09-08 201921ABCDFGHIJK](https://user-images.githubusercontent.com/111197367/189256581-9072a37b-5dba-4d5a-91a8-e4a2bdf3bb3a.png)
 
 ## Muestreo del resultado final de la clasificación de los tipos de carnes predecidos por la IA programada y aprendida.
